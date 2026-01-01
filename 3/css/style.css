@@ -77,7 +77,7 @@ body {
 /* ===== ヒーロー ===== */
 .hero {
   height: 70vh;
-  background-image: url("...img/hero.jpg");
+  background-image: url("..img/hero.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
