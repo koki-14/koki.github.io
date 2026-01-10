@@ -4,9 +4,9 @@ function toggleMenu() {
   document.getElementById("sideMenu").classList.toggle("open");
 }
 
-function closeMenu() {
+/*function closeMenu() {
   document.getElementById("sideMenu").classList.remove("open");
-}
+}*/
 
 /* スライドショー */
 const slides = [
