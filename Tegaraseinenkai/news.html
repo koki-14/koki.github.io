@@ -35,13 +35,14 @@ fetch("data/news.json")
       ul.appendChild(li);
     });
   });
+  
+</script>
 
+<script>
 fetch("common/menu.html")
   .then(res => res.text())
   .then(html => document.getElementById("menu").innerHTML = html);
-
 </script>
-
 
 </body>
 </html>
