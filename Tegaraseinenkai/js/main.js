@@ -1,3 +1,5 @@
+
+/* メニュー */
 function toggleMenu() {
   document.getElementById("sideMenu").classList.toggle("open");
 }
@@ -8,9 +10,9 @@ function closeMenu() {
 
 /* スライドショー */
 const slides = [
-  "images/slide1.jpg",
-  "images/slide2.jpg",
-  "images/slide3.jpg"
+  "img/slide1.jpg",
+  "img/slide2.jpg",
+  "img/slide3.jpg"
 ];
 let index = 0;
 

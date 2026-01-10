@@ -17,6 +17,12 @@ div id="menu"></div>
   <img id="slideImage" src="img/slide1.jpg">
 </div>
 
+<script src="js/main.js"></script>
+<script>
+fetch("common/menu.html")
+  .then(res => res.text())
+  .then(html => document.getElementById("menu").innerHTML = html);
+</script>
 
 <main>
   <h2>定期更新</h2>
@@ -36,12 +42,7 @@ fetch("data/news.json")
   });
 </script>
 
-<script src="js/main.js"></script>
-<script>
-fetch("common/menu.html")
-  .then(res => res.text())
-  .then(html => document.getElementById("menu").innerHTML = html);
-</script>
+
 
 </body>
 </html>
