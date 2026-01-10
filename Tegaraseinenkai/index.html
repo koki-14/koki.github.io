@@ -2,46 +2,32 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>手柄青年会</title>
+  <title>手柄青年会｜ホーム</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ヘッダー -->
+<!-- 共通メニュー -->
 <header class="header">
   <button class="menu-btn" onclick="toggleMenu()">☰</button>
   <h1>手柄青年会</h1>
 </header>
 
-<!-- トップ画像 -->
-<div class="hero">
-  <img src="img/main.jpg" alt="手柄青年会">
-</div>
-
-<!-- スライドメニュー -->
 <nav id="sideMenu" class="side-menu">
-  <a href="#home" onclick="closeMenu()">ホーム</a>
-  <a href="#detail" onclick="closeMenu()">詳細</a>
-  <a href="#news" onclick="closeMenu()">定期更新</a>
+  <a href="index.html">ホーム</a>
+  <a href="detail.html">詳細</a>
+  <a href="news.html">定期更新</a>
 </nav>
 
-<!-- メイン -->
+<!-- トップ画像 -->
+<div class="hero">
+  <img src="images/main.jpg" alt="手柄青年会">
+</div>
+
 <main>
-  <section id="home">
-    <h2>ホーム</h2>
-    <p>手柄青年会の公式ウェブサイトへようこそ。</p>
-  </section>
-
-  <section id="detail">
-    <h2>詳細</h2>
-    <p>地域活動・行事内容などを掲載します。</p>
-  </section>
-
-  <section id="news">
-    <h2>定期更新</h2>
-    <p>最新のお知らせを更新していきます。</p>
-  </section>
+  <h2>ホーム</h2>
+  <p>手柄青年会の公式サイトです。</p>
 </main>
 
 <script src="script.js"></script>
