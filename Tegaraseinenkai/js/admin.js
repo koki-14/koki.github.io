@@ -1,4 +1,4 @@
-const PASSWORD = "tegaraseinen";  //パスワード：tegaraseinen
+const PASSWORD = "tegara";  //パスワード：tegara
 
 function login() {
   if (pw.value === PASSWORD) {
