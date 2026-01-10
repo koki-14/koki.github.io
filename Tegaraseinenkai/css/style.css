@@ -13,19 +13,17 @@ body {
   padding: 10px;
 }
 
-
-
-
-.header h1 {
-  margin: 0 auto;
-  font-size: 18px;
-}
-
 .menu-btn {
   font-size: 24px;
   background: none;
   border: none;
   color: white;
+}
+
+
+.header h1 {
+  margin: 0 auto;
+  font-size: 18px;
 }
 
 
@@ -48,10 +46,6 @@ body {
   text-decoration: none;
 }
 
-/*使用用途がわからない
-.side-menu a:hover {
-  background: #2c3e50;
-}  */
 
 .side-menu.open {
   left: 0;
