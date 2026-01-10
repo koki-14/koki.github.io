@@ -9,31 +9,39 @@
 <body>
 
   <!-- 共通メニュー -->
-<header class="header">
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  <h1>手柄青年会</h1>
-</header>
 
-<nav id="sideMenu" class="side-menu">
-  <a href="index.html">ホーム</a>
-  <a href="detail.html">詳細</a>
-  <a href="news.html">定期更新</a>
-</nav>
+div id="menu"></div>
 
-<!-- トップ画像 -->
-<div class="hero">
-  <img src="img/main3.jpg" alt="手柄青年会">
+<!-- スライドショー -->
+<div class="slideshow">
+  <img id="slideImage" src="images/slide1.jpg">
 </div>
+
 
 <main>
   <h2>定期更新</h2>
-  <ul>
-    <li>2026/01/01 -新年のご挨拶</li>
-    <li>2025/12/15 -年末行事のお知らせ</li>
-    <li>2025/10/19 -宮東(英賀)へ御礼参加~上記の写真~</li>
-  </ul>
+  <ul id="newsList"></ul>
 </main>
 
+<script>
+fetch("data/news.json")
+  .then(res => res.json())
+  .then(data => {
+    const ul = document.getElementById("newsList");
+    data.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = `${item.date}　${item.text}`;
+      ul.appendChild(li);
+    });
+  });
+</script>
+
 <script src="js/main.js"></script>
+<script>
+fetch("common/menu.html")
+  .then(res => res.text())
+  .then(html => document.getElementById("menu").innerHTML = html);
+</script>
+
 </body>
 </html>

@@ -9,21 +9,13 @@
 <body>
 
   <!-- 共通メニュー -->
-<header class="header">
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  <h1>手柄青年会</h1>
-</header>
+<div id="menu"></div>
 
-<nav id="sideMenu" class="side-menu">
-  <a href="index.html">ホーム</a>
-  <a href="detail.html">詳細</a>
-  <a href="news.html">定期更新</a>
-</nav>
-
-<!-- トップ画像 -->
-<div class="hero">
-  <img src="img/main2.jpg" alt="手柄青年会">
+<!-- スライドショー -->
+<div class="slideshow">
+  <img id="slideImage" src="images/slide1.jpg">
 </div>
+
 
 <main>
   <h2>詳細</h2>
@@ -31,5 +23,10 @@
 </main>
 
 <script src="js/main.js"></script>
+<script>
+fetch("common/menu.html")
+  .then(res => res.text())
+  .then(html => document.getElementById("menu").innerHTML = html);
+</script>
 </body>
 </html>
