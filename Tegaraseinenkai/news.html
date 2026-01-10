@@ -23,13 +23,6 @@
 </main>
 
 <script src="js/main.js"></script>
-<script>
-fetch("common/menu.html")
-  .then(res => res.text())
-  .then(html => document.getElementById("menu").innerHTML = html);
-</script>
-
-
 
 <script>
 fetch("data/news.json")
@@ -44,7 +37,11 @@ fetch("data/news.json")
   });
 </script>
 
-
+<script>
+fetch("common/menu.html")
+  .then(res => res.text())
+  .then(html => document.getElementById("menu").innerHTML = html);
+</script>
 
 </body>
 </html>
