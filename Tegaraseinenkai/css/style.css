@@ -51,12 +51,32 @@ body {
   left: 0;
 }
 
+/* ===== 背景スライドショー ===== */
+.slideshow {
+  position: fixed;      /* 画面に固定 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;          /* 一番後ろに */
+  overflow: hidden;
+}
+
 .slideshow img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;    /* 画面いっぱい */
 }
 
 /* メイン */
 main {
-  padding: 15px;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+/* 文字を読みやすく */
+main {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
 }
