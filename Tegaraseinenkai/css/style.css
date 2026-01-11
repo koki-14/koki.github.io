@@ -26,6 +26,40 @@ body {
   font-size: 18px;
 }
 
+/* ===== ヒーロー ===== */
+.hero {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== 本文エリア ===== */
+.content-wrap {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 背景スライドショー（本文専用） */
+.bg-slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* スライドメニュー */
 .side-menu {
@@ -64,13 +98,14 @@ body {
 
 .slideshow img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;    /* 画面いっぱい */
 }
 
-/* メイン */
 main {
   position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px 20px;
   z-index: 1;
   color: white;
 }
