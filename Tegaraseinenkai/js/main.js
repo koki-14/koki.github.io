@@ -11,8 +11,7 @@ function closeMenu() {
 /* スライドショー */
 const slides = [
   "img/slide1.jpg",
-  "img/slide2.jpg",
-  "img/slide3.jpg"
+  "img/slide2.jpg"
 ];
 let index = 0;
 
