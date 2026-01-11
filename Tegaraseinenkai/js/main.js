@@ -10,6 +10,7 @@ function closeMenu() {
 /* スライドショー（背景） */
 document.addEventListener("DOMContentLoaded", () => {
 
+  // 写真を追加したら1行コピペする
   const slides = [
     "img/slide1.jpg",
     "img/slide2.jpg"
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!slideImage) return; // 念のため
 
+  // ４秒ごとにスライド
   setInterval(() => {
     index = (index + 1) % slides.length;
     slideImage.src = slides[index];
