@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<title>祭り参加登録</title>
+</head>
+<body>
+<div class="container">
+<h1>祭り参加登録</h1>
+
+<form id="form">
+  <input id="kana" placeholder="名前（ひらがな）">
+  <input id="kanji" placeholder="名前（漢字）">
+
+<select id="source">
+  <option value="">紹介元を選択</option>
+  <option value="手柄青年会">手柄青年会</option>
+  <option value="知人">知人</option>
+  <option value="その他">その他</option>
+</select>
+
+<input id="introducer" placeholder="紹介者名" style="display:none">
+<input id="email" type="email" placeholder="メールアドレス">
+
+  <button>登録する</button>
+</form>
+
+<p id="msg"></p>
+</div>
+
+<script src="js/form.js"></script>
+</body>
+</html>

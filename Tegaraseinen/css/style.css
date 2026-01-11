@@ -1,0 +1,41 @@
+body {
+  font-family: "Hiragino Mincho ProN", serif;
+  background:
+    url("https://www.transparenttextures.com/patterns/asanoha.png"),
+    #f7f3e9;
+  margin: 0;
+}
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #8b0000;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+button {
+  background: linear-gradient(135deg, #b22222, #8b0000);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+h1::after {
+  content: "🏮";
+  margin-left: 8px;
+}

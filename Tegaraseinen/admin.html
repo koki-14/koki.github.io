@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<title>管理者ページ</title>
+</head>
+
+<body>
+
+<!-- 🔒 管理者チェック（ここに入れる） -->
+<script>
+const ok = sessionStorage.getItem("admin");
+if (!ok) {
+  const p = prompt("管理者パスワードを入力してください");
+  if (p !== "admin123") {
+    location.href = "index.html";
+  }
+  sessionStorage.setItem("admin", "1");
+}
+</script>
+<!-- 🔒 ここまで -->
+
+<div class="container">
+  <h1>管理者ページ</h1>
+
+  <input id="pass" type="password" placeholder="CSVダウンロード用パスワード">
+  <button onclick="download()">CSVダウンロード</button>
+
+  <p id="msg"></p>
+</div>
+
+<script>
+const GAS_URL = "GASのURL";
+
+function download() {
+  const p = document.getElementById("pass").value;
+  window.location = GAS_URL + "?pass=" + encodeURIComponent(p);
+}
+</script>
+
+</body>
+</html>
