@@ -1,41 +1,64 @@
-const GAS_URL = "https://script.google.com/macros/s/AKfycbxIYRkLcINKdPJ_HkNM22RUJvxnA6UzJDY0_jKVOhPStr6X_sGlHaIPDaFQ-5V80KDxKA/exec";
+const form = document.getElementById("form");
+const source = document.getElementById("source");
+const introducer = document.getElementById("introducer");
+const msg = document.getElementById("msg");
 
+// 🔽 紹介元を選択したら紹介者名を表示
 source.addEventListener("change", () => {
-  introducer.style.display =
-    (source.value === "知人" || source.value === "その他")
-      ? "block" : "none";
-  if (source.value === "手柄青年会") introducer.value = "";
+  if (source.value !== "") {
+    introducer.style.display = "block";
+  } else {
+    introducer.style.display = "none";
+    introducer.value = "";
+  }
 });
 
-form.addEventListener("submit", e => {
+// 🔽 フォーム送信
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  msg.textContent = "";
 
-  [kana, kanji, source, email].forEach(el =>
-    el.classList.remove("error")
-  );
+  const kana = document.getElementById("kana").value.trim();
+  const kanji = document.getElementById("kanji").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const src = source.value;
+  const intro = introducer.value.trim();
 
-  let err = false;
-  if (!kana.value.trim()) { kana.classList.add("error"); err = true; }
-  if (!kanji.value.trim()) { kanji.classList.add("error"); err = true; }
-  if (!source.value) { source.classList.add("error"); err = true; }
-  if (!email.value.trim()) { email.classList.add("error"); err = true; }
-
-  if (err) {
-    msg.textContent = "未入力の項目があります";
+  // ✅ 入力チェック
+  if (!kana || !kanji || !email || !src) {
+    msg.textContent = "未入力の項目があります。すべて入力してください。";
+    msg.style.color = "red";
     return;
   }
 
-  fetch(GAS_URL, {
-    method: "POST",
-    body: JSON.stringify({
-      kana: kana.value.trim(),
-      kanji: kanji.value.trim(),
-      source: source.value,
-      introducer: introducer.value.trim(),
-      email: email.value.trim()
-    })
-  })
-  .then(() => location.href = "thanks.html")
-  .catch(() => msg.textContent = "送信に失敗しました");
+  msg.textContent = "送信中です…";
+  msg.style.color = "black";
+
+  // 🔽 GASへ送信するデータ
+  const data = {
+    kana: kana,
+    kanji: kanji,
+    source: src,
+    introducer: intro,
+    email: email
+  };
+
+  try {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbxIYRkLcINKdPJ_HkNM22RUJvxnA6UzJDY0_jKVOhPStr6X_sGlHaIPDaFQ-5V80KDxKA/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+
+    if (result.status === "ok") {
+      location.href = "thanks.html";
+    } else {
+      throw new Error();
+    }
+
+  } catch (err) {
+    msg.textContent = "送信に失敗しました。時間をおいて再度お試しください。";
+    msg.style.color = "red";
+  }
 });
