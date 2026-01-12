@@ -8,8 +8,10 @@ body {
 
 .container {
   max-width: 420px;
-  margin: auto;
+  margin: 30px auto;
   padding: 20px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
 }
 
 h1 {
@@ -17,25 +19,31 @@ h1 {
   color: #8b0000;
 }
 
-input, select, button {
+input, select, button, .btn {
   width: 100%;
   padding: 10px;
   margin-bottom: 12px;
   font-size: 16px;
 }
 
-button {
-  background: linear-gradient(135deg, #b22222, #8b0000);
+button, .btn {
+  background: linear-gradient(135deg,#b22222,#8b0000);
   color: #fff;
   border: none;
   border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
 }
 
-button:hover {
-  opacity: 0.85;
-}
+button:hover, .btn:hover { opacity: .85; }
 
-h1::after {
-  content: "🏮";
-  margin-left: 8px;
-}
+select:invalid { color: #999; }
+select option { color: #000; }
+
+.error { border: 2px solid #b22222; }
+
+#msg { color:#b22222; text-align:center; }
+
+.admin-area { margin-top:30px; text-align:center; }
+.admin-btn { background:#555; font-size:14px; opacity:.6; }
+.admin-btn:hover { opacity:1; }

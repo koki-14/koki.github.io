@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<title>祭り参加受付</title>
+</head>
+<body>
+
+<div class="container">
+  <h1>🏮 祭り参加受付</h1>
+
+  <p>下のボタンから参加登録を行ってください。</p>
+
+  <a class="btn" href="entry.html">参加登録はこちら</a>
+
+  <div class="admin-area">
+    <button class="admin-btn" onclick="adminLogin()">管理者ログイン</button>
+  </div>
+</div>
+
+<script>
+function adminLogin() {
+  const p = prompt("管理者パスワード");
+  if (p === "admin123") {
+    sessionStorage.setItem("admin", "1");
+    location.href = "admin.html";
+  } else {
+    alert("パスワードが違います");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -2,14 +2,24 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/style.css">
 <title>登録完了</title>
+
+<script>
+const HOME_URL = "https://koki-14.github.io/tegaraseinenkai/"; // ←戻したいURL
+setTimeout(() => location.href = HOME_URL, 3000);
+</script>
+
 </head>
 <body>
+
 <div class="container">
-<h1>登録完了</h1>
-<p>ご登録ありがとうございました。</p>
-<a href="https://koki-14.github.io/tegaraseinenkai/">手柄青年会ホームページへ戻る</a>
+  <h1>登録完了</h1>
+  <p>ご登録ありがとうございました。</p>
+  <p style="font-size:14px">3秒後に自動で移動します。</p>
+  <a class="btn" href="https://koki-14.github.io/tegaraseinenkai/">すぐ戻る</a>
 </div>
+
 </body>
 </html>
