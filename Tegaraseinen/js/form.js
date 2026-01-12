@@ -2,6 +2,7 @@ const form = document.getElementById("form");
 const source = document.getElementById("source");
 const introducer = document.getElementById("introducer");
 const msg = document.getElementById("msg");
+const clearBtn = document.getElementById("clearBtn");
 
 // 🔽 紹介元を選択したら紹介者名を表示
 source.addEventListener("change", () => {
@@ -11,6 +12,14 @@ source.addEventListener("change", () => {
     introducer.style.display = "none";
     introducer.value = "";
   }
+});
+
+// 🧹 入力内容クリア
+clearBtn.addEventListener("click", () => {
+  form.reset();
+  introducer.style.display = "none";
+  introducer.value = "";
+  msg.textContent = "";
 });
 
 // 🔽 フォーム送信
@@ -33,7 +42,6 @@ form.addEventListener("submit", async (e) => {
   msg.textContent = "送信中です…";
   msg.style.color = "black";
 
-  // 🔽 GASへ送信するデータ
   const data = {
     kana: kana,
     kanji: kanji,

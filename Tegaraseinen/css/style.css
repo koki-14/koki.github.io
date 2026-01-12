@@ -37,6 +37,17 @@ button, .btn {
 
 button:hover, .btn:hover { opacity: .85; }
 
+.sub-btn {
+  margin-top: 10px;
+  background: #999;
+  font-size: 14px;
+}
+
+.sub-btn:hover {
+  background: #777;
+}
+
+
 select:invalid { color: #999; }
 select option { color: #000; }
 
