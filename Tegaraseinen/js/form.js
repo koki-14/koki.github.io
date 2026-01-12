@@ -51,7 +51,7 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    const res = await fetch("https://script.google.com/macros/s/AKfycbyaEIXmtl8rIppnSDx6n0Y8ZaGc7rWmY1Tt4WGFU572Lnf2rFF6yc6_qlfc-yDyAr-cXQ/exec", {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbyaEIXmtl8rIppnSDx6n0Y8ZaGc7rWmY1Tt4WGFU572Lnf2rFF6yc6_qlfc-yDyAr-cXQ/exec?mode=csv&pass=admin123", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
