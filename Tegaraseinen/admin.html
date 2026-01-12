@@ -11,8 +11,11 @@
 <script>
 if (!sessionStorage.getItem("admin")) {
   const p = prompt("管理者パスワード");
-  if (p !== "admin123") location.href = "index.html";
-  sessionStorage.setItem("admin", "1");
+  if (p === "admin123") {
+    sessionStorage.setItem("admin", "1");
+  } else {
+    location.href = "index.html";
+  }
 }
 </script>
 
@@ -26,16 +29,21 @@ if (!sessionStorage.getItem("admin")) {
 </div>
 
 <script>
-const GAS_URL = "https://script.google.com/macros/s/AKfycbxIYRkLcINKdPJ_HkNM22RUJvxnA6UzJDY0_jKVOhPStr6X_sGlHaIPDaFQ-5V80KDxKA/exec";
+const GAS_URL =
+"https://script.google.com/macros/s/AKfycbxIYRkLcINKdPJ_HkNM22RUJvxnA6UzJDY0_jKVOhPStr6X_sGlHaIPDaFQ-5V80KDxKA/exec";
 
 // 人数取得
 fetch(GAS_URL + "?count=1")
   .then(r => r.text())
   .then(n => document.getElementById("count").textContent = n);
 
+// CSVダウンロード
 function download() {
+  const pass = document.getElementById("pass").value;
   window.location =
-    GAS_URL + "?pass=" + encodeURIComponent(pass.value);
+    GAS_URL +
+    "?mode=csv&pass=" +
+    encodeURIComponent(pass);
 }
 </script>
 
