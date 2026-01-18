@@ -28,7 +28,7 @@ body {
 
 /* ===== ヒーロー ===== */
 .hero {
-  height: 100vh;
+  height: 50%;
   overflow: hidden;
 }
 
