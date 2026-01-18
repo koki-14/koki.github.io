@@ -42,7 +42,6 @@ body {
 .content-wrap {
   position: relative;
   min-height: 100vh;
-  height: 50%;
 }
 
 /* 背景スライドショー（本文専用） */
